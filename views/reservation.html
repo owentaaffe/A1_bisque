@@ -1,0 +1,82 @@
+<!-- reservation html page to include in reservation php page -->
+<div class="box content"><!--box content-->
+	<div class="container"><!--container-->
+		<div align="center">
+			<h1 style="margin-left: -9em; font-family: Ariel, cursive; color: #33D4FF; height: auto">Bisque Restaurant Reservation</h1>
+		</div>
+
+		<!--container-->
+		<div class="col-md-12 col-sm-12 col-xs-12"><!--  contact page start -->
+			<div class="col-md-10 col-md-offset-2"><!--  contact left column start -->
+				<div class="col-md-8 col-md-onset-2"><!--  contact right column start -->
+					<!-- Ref: https://www.w3schools.com/PhP/php_form_validation.asp -->
+					<h2><strong>Make a Reservation</strong></h2>
+					<!-- Form for reservation -->
+					<form method="post" class="reserveForm" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+						<label for="name" class="col-md-4">Name:</label>
+						<input type="text" name="name" class="col-md-6" required>
+						<br><br>
+						<label for="name" class="col-md-4">E-mail:</label>
+						<input type="email" name="email" class="col-md-6" required>
+						<br><br>
+						<label for="phone" class="col-md-4">Mobile Phone:</label>
+						<!-- Ref: https://www.codexworld.com/how-to/phone-number-validation-html5/ -->
+						<input type="tel" name="phone"  class="col-md-6" placeholder="0801234567" required>
+						<br><br>
+						<label for="date" class="col-md-4 datepicker">Date:</label>
+						<!-- client side validation stopping user picking a date from the past -->
+						<input type="date" min="<?php echo date('Y-m-d'); ?>"  name="date" class="col-md-6" required>
+						<br><br>
+						<label for="time" class="col-md-4">Time:</label>
+						<select name="time" id="time" class="col-md-2" value="Select a Time">
+							<option value="8:00 am">8:00</option>
+							<option value="8:30 am">8:30</option>
+							<option value="9:00 am">9:00</option>
+							<option value="9:30 am">9:30</option>
+							<option value="10:00 am">10:00</option>
+							<option value="10:30 am">10:30</option>
+							<option value="11:00 am">11:00</option>
+							<option value="11:30 am">11:30</option>
+							<option value="12:00 pm">12:00</option>
+							<option value="12:30 pm">12:30</option>
+							<option value="1:00 pm">13:00</option>
+							<option value="1:30 pm">13:30</option>
+							<option value="2:00 pm">14:00</option>
+							<option value="2:30 pm">14:30</option>
+							<option value="3:00 pm">15:00</option>
+							<option value="3:30 pm">15:30</option>
+							<option value="4:00 pm">16:00</option>
+							<option value="4:30 pm">16:30</option>
+							<option value="5:00 pm">17:00</option>
+							<option value="5:30 pm">17:30</option>
+							<option value="6:00 pm">18:00</option>
+							<option value="6:30 pm">18:30</option>
+							<option value="7:00 pm">19:00</option>
+							<option value="7:30 pm">19:30</option>
+							<option value="8:00 pm">20:00</option>
+							<option value="8:30 pm">20:30</option>
+							<option value="9:00 pm">21:00</option>
+							<option value="9:30 pm">21:30</option>
+							<option value="10:00 pm">22:00</option>
+							<option value="10:30 pm">22:30</option>
+						</select>
+						<br><br>
+						<label for="partyOf" class="col-md-4" >How many people:</label>
+						<input type="number" name="partyOf" class="col-md-6" value=1 min="1" max="6" required>
+						<br><br>
+						<label for="message" class="col-md-4">Message:<br><em>(Please add how many more if more than a party of 6 needed here.) </em></label>
+						<textarea name="message" placeholder="Please use this to tell us of anything that may help us accommodate you better i.e allergies, disabilities and/or details that you think may help your booking" rows="5" cols="15" class="col-md-6" minlength="10" maxlength="250" ></textarea>
+						<br><br>
+						<br><br>
+						<div class="col-md-1 col-md-offset-4" style="padding-top: 1em;">
+						<input class="btn btn-success" type="submit" name="submit" value="Submit">
+						</div><br><br><hr>
+					</form><br><br>
+					<div>
+						
+					</div>
+				</div>
+
+			</div><!--  contact left column end -->
+		</div><!--container-->
+		
